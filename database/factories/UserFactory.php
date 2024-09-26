@@ -24,11 +24,26 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
+            [
+                'name'              => "Md Tourat Islam",
+                'email'             => "admin@gmail.com",
+                'phone'             => '01517123534',
+                'email_verified_at' => now(),
+                'password'          => 'password',
+                'type'              => 1,
+                'remember_token'    => Str::random(10),
+                'role'              => 'Admin',
+            ],
+            [
+                'name'              => "Net Coden Inc",
+                'email'             => "customer@gmail.com",
+                'phone'             => '01322920575',
+                'email_verified_at' => now(),
+                'password'          => 'password',
+                'type'              => 2,
+                'remember_token'    => Str::random(10),
+                'role'              => 'Customer',
+            ],
         ];
     }
 
